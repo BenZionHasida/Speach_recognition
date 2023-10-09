@@ -28,13 +28,16 @@ export function App() {
   let backToRecord = ()=>{
     setRouter('Record')
   }
+  let recordNextMishna = ()=>{
+    
+  }
 
 
   return (
     <div> 
     {router === 'Selectors' && <Selectors sendOriginalString={handleUserChoice}/>}
     {router === 'Record' && <Record sendRecordedString={handleUserRecording} />}
-    {router === 'Compare' && <Compare newMishna={backToSelectors} originalString={originalString} recordedString={recordedString} testAgain={backToRecord}/>}
+    {router === 'Compare' && <Compare newMishna={backToSelectors} originalString={originalString} recordedString={recordedString} testAgain={backToRecord} nextMishna={recordNextMishna}/>}
      </div>
   )
 }

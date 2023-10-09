@@ -17,6 +17,9 @@ function Compare(props){
     function testAgain(){
         props.testAgain()
     }
+    function nextMishna(){
+        props.nextMishna()
+    }
 
    
     return(
@@ -26,6 +29,8 @@ function Compare(props){
         <p>הציון שלך הוא {scoreOfMatch}</p>
         <button onClick={newMishna}>משנה חדשה </button>
         <button onClick={testAgain}>היבחן שוב</button>
+        <br />
+        <button onClick={nextMishna}>משנה הבאה</button>
 
         </>
     )
