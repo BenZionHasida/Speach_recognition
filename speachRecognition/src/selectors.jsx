@@ -5,34 +5,36 @@ import MasechetSelector from "./Masechet";
 import MishnahSelector from "./mishna";
 
 function Selectors(props) {
+  // route components to render
   let [router, setRouter] = useState('seder')
 
-  // seder variables and function
+  // state for sedorim array (to create the option elements) and function to handle user seder choice
     let [choosenSeder, setChoosenSeder] = useState('')
     let handleSederClick = (seder)=>{
         setChoosenSeder(seder)
         setRouter('masecet')
     }
-    // masecet variables and functions
-    let [choosenMasecet, setchoosenMasecet] = useState('')
+  // states for masectot array (to create the option elements) and masecet detailes (for send to perek components) and function to handle user masecet choice
+  let [choosenMasecet, setchoosenMasecet] = useState('')
     let [masecetDetailes, setMasecetDetailes] = useState('')
     let handleMasecetClick = (masecet, masecetDetailes)=>{
         setchoosenMasecet(masecet)
         setMasecetDetailes(masecetDetailes)
         setRouter('perek')
     }
-    // perek varables and functions
+    // state for perakim array (to create the option elements) and function to handle user perek choice
     let [choosenPerek, setchoosenPerek] = useState('')
     let handlePerekClick = (Perek)=>{
       Perek = Number(Perek) + 1
         setchoosenPerek(Perek)
         setRouter('mishna')
     }
-    // Mishna variables and functions
-    let [MishnahIsDisabled, setMishnahIsDisabled] = useState(true)
+    // state for mishnayot array (to create the option elements) and function to handle user mishna choice
     let handleMishnaClick = (mishna)=>{
       props.sendOriginalString(mishna)
     }
+
+    // reroute in case the user wants go back 1 level
     function backLevel(){
       if(router === 'masecet'){
         setRouter('seder')

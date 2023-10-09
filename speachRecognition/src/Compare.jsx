@@ -20,6 +20,9 @@ function Compare(props){
     function nextMishna(){
         props.nextMishna()
     }
+    function nextPerek(){
+        props.nextPerek()
+    }
 
    
     return(
@@ -27,10 +30,11 @@ function Compare(props){
         <ReactDiffViewer newValue={originalString} oldValue={props.recordedString} compareMethod={DiffMethod.WORDS} rightTitle={"המשנה"} leftTitle={"ההקלטה שלך"} splitView={true} styles={{line:{direction: 'rtl'}}} />
         <p>שימו לב! הציון מוטה ללמטה בעקבות טעויות בתהליך המרת ההקלטה לטקסט בעקבות זה ציון מעל 75 הוא בדרך כלל ציון טוב</p>
         <p>הציון שלך הוא {scoreOfMatch}</p>
-        <button onClick={newMishna}>משנה חדשה </button>
-        <button onClick={testAgain}>היבחן שוב</button>
-        <br />
-        <button onClick={nextMishna}>משנה הבאה</button>
+        <button onClick={newMishna}>בחר משנה חדשה </button>
+        <button onClick={testAgain}>הבחן שוב על אותו משנה</button>
+        <button onClick={nextPerek}>עבור לפרק הבא</button>
+        <button onClick={nextMishna}>עבור למשנה הבאה</button>
+
 
         </>
     )

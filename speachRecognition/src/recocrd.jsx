@@ -22,9 +22,10 @@ function Record(props) {
   return (
     <div>
       <p>שימו לב! יש לומר את המילים בקול רם וברור, מילה אחרי מילה</p>
-      <button onClick={startToRecord}>התחל הקלטת משנה</button>
       <button onClick={stopToRecord}>סיים  הקלטת משנה</button>
-      {listening && <p>listening...</p>}
+      <button onClick={startToRecord}>התחל הקלטת משנה</button>
+
+      {listening && <p>...מאזין</p>}
     </div>
   );
 }
