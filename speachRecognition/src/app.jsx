@@ -7,11 +7,12 @@ import './app.css'
 import Record from './recocrd'
 import Selectors from './selectors'
 import Compare from "./Compare";
+import HomePage from "./HomePage";
 import { async } from "regenerator-runtime";
 
 export function App() {
   // route component to render
-  let [router, setRouter] = useState('Selectors')
+  let [router, setRouter] = useState('HomePage')
   // the data about current mishna the user test on
   let [currentMishnaData, setCurrentMishnaData] = useState([])
   // states to original and recorded text (mishna) 
@@ -78,9 +79,13 @@ export function App() {
       alert('אין עוד פרקים במסכת הזו, בחר משנה במסכת אחרת')
     }
   }
-
+  let startToTest = ()=>{
+    setRouter('Selectors')
+  }
   return (
     <div> 
+      
+    {router === 'HomePage' && <HomePage startToTest={startToTest}/>}
     {router === 'Selectors' && <Selectors sendOriginalString={handleUserChoice}/>}
     {router === 'Record' && <Record sendRecordedString={handleUserRecord} />}
     {router === 'Compare' && <Compare newMishna={backToSelectors} originalString={originalString} recordedString={recordedString} testAgain={backToRecord} nextMishna={recordNextMishna} nextPerek={recordNextPerek}/>}

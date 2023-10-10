@@ -25,15 +25,12 @@ function SederSelector(props){
     
 
     return (
-        <>
-        <select onChange={handleChange}  name="seder" id="seder">
-            <option value="">בחר סדר</option>
-            {sederArray.map((item,index)=>(
-                <option value={item} id={index}>{item}</option>
-            ))}
-        </select>
-
-        </>
+        <div className='selector'>
+        {sederArray.map((item,index)=>(
+            <button className='option' key={index} value={item} id={index} onClick={handleChange}>{item}</button>
+        ))}
+       
+        </div>
     )
 }
 export default SederSelector

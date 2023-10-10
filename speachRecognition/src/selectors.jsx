@@ -49,13 +49,14 @@ function Selectors(props) {
 
 
   return (
-    <>
+    <div className="container">
+      <h4 className="struc">בחרו את המשנה עליה תרצו להיבחן לפי: סדר, מסכת, פרק, משנה</h4>
     {router === 'seder' && <SederSelector sendSeder={handleSederClick} />}
     {router === 'masecet' && <MasechetSelector sendMasecet={handleMasecetClick}  seder={choosenSeder} />}
     {router === 'perek' && <PerekSelector sendPerek={handlePerekClick}  masecet={choosenMasecet} masecetDetailes={masecetDetailes} />}
     {router === 'mishna' && <MishnahSelector sendMishna={handleMishnaClick}  perekDetailes={masecetDetailes + '.' + choosenPerek}/>}
-    <button onClick={backLevel}>חזור</button>
-    </>
+    <button className="nav-button end-buttons" onClick={backLevel}>חזור</button>
+    </div>
   )
 }
 

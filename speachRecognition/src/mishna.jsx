@@ -16,7 +16,7 @@ function MishnahSelector(props){
             setLengths([data.lengths[0],data.he.length])
             let box = []
             for (let index = 0; index < data.he.length; index++) {
-                box.push(<option id={index} value={index}>{"משנה "+lettersInHebrew[index]}</option>)                
+                box.push("משנה "+lettersInHebrew[index])                
             }
             setMishnaArray(box)
         }
@@ -27,12 +27,11 @@ function MishnahSelector(props){
         props.sendMishna([currentPerek.he[index],[props.perekDetailes,index + 1, ...lengths]])
     }
     return (
-        <>
-        <select onChange={handleChange}  name="mishna" id="mishna">
-            <option value="">בחר משנה</option>
-            {mishnaArray.map((item)=> item)}
-        </select>
-        </>
+        <div className="selector">
+        {mishnaArray.map((item, index)=> (
+        <button className="option" key={index} onClick={handleChange} id={index} value={index}>{item}</button>))}
+
+        </div>
     )
 
 }

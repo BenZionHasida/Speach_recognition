@@ -1,34 +1,49 @@
 import React, { useState } from "react";
 import axios from "axios";
-import SpeechRecognition, {useSpeechRecognition,} from "react-speech-recognition";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
+
 
 function Record(props) {
-  const {
-    transcript,
-    listening,
-    resetTranscript,
-  } = useSpeechRecognition();
+  const [state, setState] = useState('idle');
 
-  function startToRecord(){
-    SpeechRecognition.startListening({continuous:true,language:'he-IL'})
+  const onClickHandler = () => {
+    setState('loading');
+
+    // send an HTTP request
+    setTimeout(() => {
+      setState('success');
+    }, 2000);
+  };
+  const { transcript, listening, resetTranscript } = useSpeechRecognition();
+
+  function startToRecord() {
+    SpeechRecognition.startListening({ continuous: true, language: "he-IL" });
   }
 
-  function stopToRecord(){
+  function stopToRecord() {
     // resetTranscript()
-    SpeechRecognition.stopListening()
-    props.sendRecordedString(transcript)
+    SpeechRecognition.stopListening();
+    props.sendRecordedString(transcript);
   }
 
   return (
-    <div>
-      <p>שימו לב! יש לומר את המילים בקול רם וברור, מילה אחרי מילה</p>
-      <button onClick={stopToRecord}>סיים  הקלטת משנה</button>
-      <button onClick={startToRecord}>התחל הקלטת משנה</button>
+    <div className="container">
+      <h4 className="struc">שימו לב! יש לומר את המילים בקול רם וברור, מילה אחרי מילה</h4>
+      <div className="record-buttons">
+        <button className="nav-button" onClick={startToRecord}>
+          התחל הקלטת משנה
+        </button>
 
-      {listening && <p>...מאזין</p>}
+        <button className="nav-button" onClick={stopToRecord}>
+          סיים הקלטת משנה
+        </button>
+        </div>
+        {listening && <span className="recording-indicator"></span>} 
+      
     </div>
   );
 }
 
 export default Record;
-

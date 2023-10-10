@@ -26,16 +26,12 @@ function PerekSelector(props){
     
 
     return (
-        <>
-        <select onChange={handleChange}  name="Perek" id="Perek">
-            <option value="">בחר פרק</option>
-            {PerekArray.map((item,index)=>(
-                <option value={index} id={index}>{item}</option>
-            ))}
-        </select>
-        {/* <label htmlFor=""> בחר פרק</label> */}
-
-        </>
+        <div className="selector">
+        {PerekArray.map((item,index)=>(
+            <button className="option" key={index} value={item} id={index} onClick={handleChange}>{item}</button>
+        ))}
+      
+        </div>
     )
 
 }

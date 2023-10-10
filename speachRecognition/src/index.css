@@ -1,0 +1,102 @@
+/* Fira Sans Thin */
+@font-face {
+    font-family: "dorian";
+    src: 
+         url('../public/dorian/dorian/dorianclm-book-webfont.woff') format('woff'),
+         url('../public/dorian/dorian/dorianclm-book-webfont.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+  }
+
+
+body{
+    text-align: center;
+    direction: rtl;
+    font-family: 'dorian';
+    font-family: 'Varela Round', sans-serif;
+
+
+    
+}
+.compare-container{
+    gap: 40px;
+}
+.nav-button{
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 100;
+    background-color: white;
+    font-family: 'dorian';
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.nav-button:hover{
+    background-color: rgba(128, 128, 128, 0.356);
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+#home-page-image{
+    width: 200px;
+    height: 250px;
+    border-radius: 35px;
+}
+.selector{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+.option{
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.066);
+    font-family: 'Noto Rashi Hebrew', serif;
+    font-size: 25px;
+    border-radius: 6px;
+}
+.record-buttons{
+    display: flex;
+    gap: 10px;
+}
+.recording-indicator {
+    margin-top: 10px;
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    border-radius: 50%;
+    animation: pulsate 1s infinite;
+  }
+  
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+.compare-buttons{
+    display: flex;
+    gap: 10px;
+}
+.end-buttons{
+    position: absolute;
+    bottom: 15px;
+}
+.struc{
+    position: absolute;
+    top: 15px;
+}
+
+  

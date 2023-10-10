@@ -32,17 +32,14 @@ function MasechetSelector(props){
     
 
     return (
-        <>
+        <div className='selector'>
+              {MasecetArray.map((item,index)=>(
+            <button className='option' key={index} value={item} id={index} onClick={handleChange}>{item}</button>
+        ))}
+      
         
-        <select onChange={handleChange}  name="Masecet" id="Masecet">
-            <option value="">בחר מסכת</option>
-            {MasecetArray.map((item,index)=>(
-                <option value={item} id={index}>{item}</option>
-            ))}
-        </select>
-        {/* <label htmlFor=""> בחר מסכת</label> */}
-
-        </>
+      
+        </div>
     )
 
 }
