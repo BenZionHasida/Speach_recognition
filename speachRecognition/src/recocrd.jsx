@@ -29,8 +29,9 @@ function Record(props) {
   }
 
   return (
-    <div className="container">
-      <h4 className="struc">שימו לב! יש לומר את המילים בקול רם וברור, מילה אחרי מילה</h4>
+    <div className="container record-container">
+      <h4 className="struc record-struc">שימו לב! יש לומר את המילים בקול רם וברור, מילה אחרי מילה</h4>
+      
       <div className="record-buttons">
         <button className="nav-button" onClick={startToRecord}>
           התחל הקלטת משנה

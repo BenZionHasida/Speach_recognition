@@ -20,8 +20,14 @@ function PerekSelector(props){
         fetchPerek()
 
     },[])
+    function convertHebrewLetterToNumber(hebrewLetter){
+        let asNumber = lettersInHebrew.indexOf(hebrewLetter)
+        return asNumber 
+    }
     function handleChange(event){
-        props.sendPerek(event.target.value)
+        let perek = convertHebrewLetterToNumber(event.target.value[event.target.value.length - 1])
+        props.sendPerek(perek)
+        console.log(perek);
       }
     
 

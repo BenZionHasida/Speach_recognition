@@ -39,10 +39,10 @@ body{
 }
 
 .container{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 } 
 #home-page-image{
@@ -102,16 +102,22 @@ body{
     display: flex;
     gap: 10px;
 }
-.end-buttons{
-    position: absolute;
-    bottom: 15px;
-}
+
 .struc{
-    position: absolute;
-    top: 15px;
-    border-bottom: 1px solid gray;
+       border-bottom: 1px solid gray;
 }
 .score{
     box-shadow: rgba(109, 107, 108, 0.4) 5px 5px, rgba(129, 126, 128, 0.3) 10px 10px, rgba(169, 167, 168, 0.2) 15px 15px, rgba(183, 181, 182, 0.1) 20px 20px, rgba(112, 111, 112, 0.05) 25px 25px;
     border-radius: 3px;
 }  
+#home-page{
+    display: flex;
+    justify-content: space-evenly;
+}
+.record-container{
+    justify-content: center;
+}
+.record-struc{
+    position: absolute;
+    top: 10px;
+}

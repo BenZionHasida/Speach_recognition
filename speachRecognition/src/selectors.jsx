@@ -22,9 +22,12 @@ function Selectors(props) {
         setMasecetDetailes(masecetDetailes)
         setRouter('perek')
     }
+
+
     // state for perakim array (to create the option elements) and function to handle user perek choice
     let [choosenPerek, setchoosenPerek] = useState('')
     let handlePerekClick = (Perek)=>{
+
       Perek = Number(Perek) + 1
         setchoosenPerek(Perek)
         setRouter('mishna')
