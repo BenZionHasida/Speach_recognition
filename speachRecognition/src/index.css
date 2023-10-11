@@ -22,16 +22,20 @@ body{
     gap: 40px;
 }
 .nav-button{
-    border: 1px solid black;
+    border: 0px solid black;
+    
     border-radius: 8px;
     font-size: 15px;
     font-weight: 100;
     background-color: white;
     font-family: 'dorian';
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: transform 0.3s;
 }
 .nav-button:hover{
     background-color: rgba(128, 128, 128, 0.356);
+    transform: scale(1.1);
 }
 
 .container{
@@ -58,7 +62,15 @@ body{
     font-family: 'Noto Rashi Hebrew', serif;
     font-size: 25px;
     border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: transform 0.3s;
 }
+.option:hover{
+    background-color: rgba(128, 128, 128, 0.356);
+    transform: scale(1.1);
+}
+
+    
 .record-buttons{
     display: flex;
     gap: 10px;
@@ -97,6 +109,9 @@ body{
 .struc{
     position: absolute;
     top: 15px;
+    border-bottom: 1px solid gray;
 }
-
-  
+.score{
+    box-shadow: rgba(109, 107, 108, 0.4) 5px 5px, rgba(129, 126, 128, 0.3) 10px 10px, rgba(169, 167, 168, 0.2) 15px 15px, rgba(183, 181, 182, 0.1) 20px 20px, rgba(112, 111, 112, 0.05) 25px 25px;
+    border-radius: 3px;
+}  

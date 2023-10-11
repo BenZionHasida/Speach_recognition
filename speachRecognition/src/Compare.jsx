@@ -27,11 +27,11 @@ function Compare(props){
    
     return(
         <div className='container compare-container'>
-            <h4 className='struc'>בצד ימין מוצגת המשנה שלך ובצד שמאל מוצגת המשנה כפי שהוקלטת, ההבדלים ביניהם מודגשים.<br />בחלק התחתון מוצג הציון שלך 
-            <h6>שימו לב! הציון מוטה ללמטה בעקבות טעויות בתהליך המרת ההקלטה לטקסט בעקבות זה ציון מעל 70 הוא בדרך כלל ציון טוב</h6>
+            <h4 className='struc'>בצד שמאל מוצגת המשנה ובצד ימין מוצגת המשנה כפי שהוקלטת, ההבדלים ביניהם מודגשים.<br />בחלק התחתון מוצג הציון שלך 
+            <h6 className='struc'>שימו לב! הציון מוטה ללמטה בעקבות טעויות בתהליך המרת ההקלטה לטקסט בעקבות זה ציון מעל 70 הוא בדרך כלל ציון טוב</h6>
             </h4>
         <ReactDiffViewer newValue={originalString} oldValue={props.recordedString} compareMethod={DiffMethod.WORDS} rightTitle={"המשנה"} leftTitle={"ההקלטה שלך"} splitView={true}/>
-        <h1>הציון שלך הוא {scoreOfMatch}</h1>
+        <h2 className='score'>הציון שלך הוא {scoreOfMatch}</h2>
         <div className='compare-buttons end-buttons'>
         <button className='nav-button' onClick={nextMishna}>עבור למשנה הבאה</button>
         <button className='nav-button' onClick={nextPerek}>עבור לפרק הבא</button>
