@@ -3,6 +3,7 @@ import preact from '@preact/preset-vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [preact()],
-  base: '/Speach_recognition'
+  base: '/Speach_recognition',
+
+  plugins: [preact()]
 })
