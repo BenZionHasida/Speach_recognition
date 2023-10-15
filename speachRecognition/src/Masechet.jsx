@@ -3,8 +3,10 @@ import axios from 'axios'
 
 
 function MasechetSelector(props){
+    // states for list of masectot and detailes of them
     let [MasecetArray, setMasecetArray] = useState([])
     let [dictionaryOfNames, setDictionaryOfNames] = useState({})
+    // fetch the masectot from 'sefaria' api
     useEffect(()=>{
         async function fetchMasecet(){
             let response = await axios.get("https://www.sefaria.org/api/index/")
@@ -26,6 +28,7 @@ function MasechetSelector(props){
         fetchMasecet()
 
     },[])
+    // function for user choice (routr to next selector)
     function handleChange(event){
         props.sendMasecet(event.target.value, dictionaryOfNames[event.target.value])        
     }

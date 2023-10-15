@@ -3,13 +3,13 @@ import axios from 'axios'
 
 
 function SederSelector(props){
+    // state for list of sedarim
     let [sederArray, setSederArray] = useState([])
-
+    // fetch the sedarim from 'safria' api
     useEffect(()=>{
         async function fetchSeder(){
             let response = await axios.get("https://www.sefaria.org/api/index/")
             let data = response.data
-            // console.log(data[1].contents[0].heCategory);
             let box = []
             for (let index = 0; index < 6; index++){
                 box.push(data[1].contents[index].heCategory)
@@ -19,6 +19,7 @@ function SederSelector(props){
         fetchSeder()
 
     },[])
+    // handle user select (route to next select)
     function handleChange(event){
         props.sendSeder(event.target.value)
     }

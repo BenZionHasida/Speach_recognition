@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function PerekSelector(props){
+    // state for list of perakim
     let [PerekArray, setPerekArray] = useState([])
+    // hebrews letters
     let lettersInHebrew = ["א","ב","ג","ד","ה","ו","ז","ח","ט","י",'י"א','י"ב','י"ג','י"ד','ט"ו','ט"ז','י"ז','י"ח','י"ט','כ','כ"א','כ"ב','כ"ג','כ"ד','כ"ה','כ"ו','כ"ז','כ"ח','כ"ט','ל']
-
+    // fetch the perakim from 'sefari' api
     useEffect(()=>{
         async function fetchPerek(){
             let response = await axios.get("https://www.sefaria.org/api/texts/"+props.masecetDetailes)
@@ -20,14 +22,15 @@ function PerekSelector(props){
         fetchPerek()
 
     },[])
+    // convert hebrew letter to number
     function convertHebrewLetterToNumber(hebrewLetter){
         let asNumber = lettersInHebrew.indexOf(hebrewLetter)
         return asNumber 
     }
+    // handle user select (route to next selector)
     function handleChange(event){
         let perek = convertHebrewLetterToNumber(event.target.value[event.target.value.length - 1])
         props.sendPerek(perek)
-        console.log(perek);
       }
     
 

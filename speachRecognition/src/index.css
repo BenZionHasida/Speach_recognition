@@ -76,9 +76,8 @@ body{
     gap: 10px;
 }
 .recording-indicator {
-    margin-top: 10px;
-    width: 18px;
-    height: 18px;
+    width: 30px;
+    height: 30px;
     background-color: red;
     border-radius: 50%;
     animation: pulsate 1s infinite;
@@ -116,6 +115,7 @@ body{
 }
 .record-container{
     justify-content: center;
+    gap: 10px;
 }
 .record-struc{
     position: absolute;
