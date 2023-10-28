@@ -32,12 +32,12 @@ function Compare(props){
             <h6>שימו לב! הציון מוטה ללמטה בעקבות טעויות בתהליך המרת ההקלטה לטקסט בעקבות זה ציון מעל 70 הוא בדרך כלל ציון טוב</h6>
             </h4>
         <ReactDiffViewer newValue={originalString} oldValue={props.recordedString} compareMethod={DiffMethod.WORDS} rightTitle={"המשנה"} leftTitle={"ההקלטה שלך"} splitView={true}/>
-        <h2 className='score'>הציון שהבוייחען נתן לך הוא {scoreOfMatch}</h2>
+        <h2 className='score'>הציון שהבוייחען נתן לך הוא {scoreOfMatch + '%'}</h2>
         <div className='compare-buttons end-buttons'>
-        <button className='nav-button' onClick={nextMishna}>עבור למשנה הבאה</button>
-        <button className='nav-button' onClick={nextPerek}>עבור לפרק הבא</button>
+        <button className='nav-button' onClick={nextMishna}>משנה הבאה</button>
+        <button className='nav-button' onClick={nextPerek}>פרק הבא</button>
         <button className='nav-button' onClick={testAgain}>הבחן שוב על אותו משנה</button>
-        <button className='nav-button' onClick={newMishna}>בחר משנה חדשה </button>
+        <button className='nav-button' onClick={newMishna}>משנה חדשה </button>
         </div>
 
         </div>

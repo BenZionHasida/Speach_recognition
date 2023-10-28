@@ -14,8 +14,6 @@ body{
     direction: rtl;
     font-family: 'dorian';
     font-family: 'Varela Round', sans-serif;
-
-
     
 }
 .compare-container{
@@ -32,11 +30,19 @@ body{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     transition: transform 0.3s;
+    padding: 3px;
 }
 .nav-button:hover{
     background-color: rgba(128, 128, 128, 0.356);
     transform: scale(1.1);
 }
+.home-page-button{
+    font-size: 25px;
+    border: 0;
+    padding: 5px;
+}
+
+
 
 .container{
     min-height: 100vh;
@@ -105,17 +111,22 @@ body{
 .struc{
        border-bottom: 1px solid gray;
 }
-.score{
-    box-shadow: rgba(109, 107, 108, 0.4) 5px 5px, rgba(129, 126, 128, 0.3) 10px 10px, rgba(169, 167, 168, 0.2) 15px 15px, rgba(183, 181, 182, 0.1) 20px 20px, rgba(112, 111, 112, 0.05) 25px 25px;
-    border-radius: 3px;
-}  
+
+.score {
+    background-color: rgba(0, 0, 0, 0.831);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
 #home-page{
     display: flex;
     justify-content: space-evenly;
 }
 .record-container{
-    justify-content: center;
-    gap: 10px;
+    height: 100vh;
+    justify-content: space-evenly;
 }
 .record-struc{
     position: absolute;

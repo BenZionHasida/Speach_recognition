@@ -19,8 +19,8 @@ function Record(props) {
   }
 
   return (
-    <div className="container record-containe">
-      <h4 className="struc record-stru">שימו לב! יש לומר את המילים בקול רם וברור, מילה אחרי מילה</h4>
+    <div className="container record-container">
+      <h4 className="struc record-struc">שימו לב! יש לומר את המילים בקול רם וברור, מילה אחרי מילה</h4>
       
         {!listening && <h4>להתחלת הבחינה לחץ על הכפתור למטה</h4>}
         {listening && <h2>הבוייחען מאזין לך! </h2
@@ -28,11 +28,11 @@ function Record(props) {
         {listening && <span className="recording-indicator"></span>} 
         <div className="record-buttons">
         <button className="nav-button" onClick={startToRecord}>
-          התחל הקלטת משנה
+          התחל הקלטה
         </button>
 
         <button className="nav-button" onClick={stopToRecord}>
-          סיים הקלטת משנה
+          סיים הקלטה
         </button>
         </div>
       
