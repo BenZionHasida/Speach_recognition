@@ -4,7 +4,6 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-
 function Record(props) {
   // states for react-speach-recognition
   const { transcript, listening, resetTranscript } = useSpeechRecognition();
@@ -20,13 +19,14 @@ function Record(props) {
 
   return (
     <div className="container record-container">
-      <h4 className="struc record-struc">שימו לב! יש לומר את המילים בקול רם וברור, מילה אחרי מילה</h4>
-      
-        {!listening && <h4>להתחלת הבחינה לחץ על הכפתור למטה</h4>}
-        {listening && <h2>הבוייחען מאזין לך! </h2
-        >} 
-        {listening && <span className="recording-indicator"></span>} 
-        <div className="record-buttons">
+      <h4 className="struc record-struc">
+        שימו לב! יש לומר את המילים בקול רם וברור, מילה אחרי מילה
+      </h4>
+
+      {!listening && <h4>להתחלת הבחינה לחץ על הכפתור למטה</h4>}
+      {listening && <h2>הבוייחען מאזין לך! </h2>}
+      {listening && <span className="recording-indicator"></span>}
+      <div className="record-buttons">
         <button className="nav-button" onClick={startToRecord}>
           התחל הקלטה
         </button>
@@ -34,9 +34,7 @@ function Record(props) {
         <button className="nav-button" onClick={stopToRecord}>
           סיים הקלטה
         </button>
-        </div>
-      
-      
+      </div>
     </div>
   );
 }
